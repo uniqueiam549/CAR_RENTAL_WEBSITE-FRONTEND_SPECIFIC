@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="Styles.css">
+
+    <title>Car_Rental_FrontEnd</title>
+
+    <style>
+
+        .left_test, .right_test{
+
+            box-shadow: 0px 7px 29px 0px #a74525;
+
+        }
+
+        .wrapper{
+            height: 100vh;
+        }
+
+
+        
+        .findD{
+            background-color: #FF4000;
+            color: white;
+
+        }
+        #spanele{
+            color: #FF4000;
+        }
+
+        .car_list_butt{
+            background-color: grey;
+            padding: 0.5rem;
+            color: white;
+        }
+        .car_list_butt:hover{
+            background-color: #FF4000;
+            cursor: pointer;
+        }
+        .Reg_butt{
+            background-color: #FF4000;
+            box-shadow: 0px 7px 29px 0px #a74525;
+        }
+        .bttm_light{
+            background-color: #FF4000;
+        }
+
+        .Booking{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper relative">
+        
+            <!-- Nav Bar, Hero Section, Booking Form -->
+            <div class=" relative mb-10">
+
+            <div class="absolute right-0 -z-1">
+                <img src="images/hero/hero-bg.png" alt="">
+            </div>
+    
+    
+            <!-- Nav bar -->
+            <nav class="absolute w-[1170px] left-20 flex flex-row  items-center  my-3">
+    
+                <!-- LOGO Image -->
+                <img src="images/logo/logo.png" alt=""
+                    width="125px"
+                    height="30px"
+                >
+    
+                <!-- NAV Elements -->
+                <ul class=" flex flex-row space-x-7 ml-[100px]">
+    
+                    <li href="#" class="relative space-y-2 group">
+                        <a href="#" class="">Home</a>
+                        <div class="bttm_light absolute bottom-0 w-full h-1  opacity-0 group-hover:opacity-100"></div>
+                    </li>
+    
+                    <li href="#" class="relative space-y-2 group">
+                        <a href="#">About</a>
+                        <div class="bttm_light absolute bottom-0 w-full h-1 opacity-0 group-hover:opacity-100"></div>
+                    </li>
+    
+                    <li href="#" class="relative  space-y-2 group">
+                        <a href="#carlist" class="scroll-smooth">Vehicle Models</a>
+                        <div class="bttm_light absolute bottom-0 w-full h-1 opacity-0 group-hover:opacity-100"></div>
+                    </li>
+    
+                    <li href="#" class="relative  space-y-2 group">
+                        <a href="#testimonials"  class="scroll-smooth">Testimonials</a>
+                        <div class="bttm_light absolute bottom-0 w-full h-1 opacity-0 group-hover:opacity-100"></div>
+                    </li>
+    
+                    <li href="#" class="relative  space-y-2 group">
+                        <a href="#">Our Team</a>
+                        <div class="bttm_light absolute bottom-0 w-full h-1 opacity-0 group-hover:opacity-100"></div>
+                    </li>
+    
+                    <li href="#" class="relative space-y-2 group">
+                        <a href="#ContactUs" class="scroll-smooth">Contact</a>
+                        <div class="bttm_light absolute bottom-0 w-full h-1 opacity-0 group-hover:opacity-100"></div>
+                    </li>
+                    
+                </ul>
+    
+                <!-- NAV Buttons[Sign up & Registration] -->
+                <div class="mx-auto flex flex-row space-x-7">
+
+                    <!-- Login Button -->
+                    <button id="show-login">Log In</button>
+                    <!-- Pop Up Log In Window -->
+                     
+                <div class="popup">
+                    <!-- multiplication sign (×) -->
+                    <div class="close-btn">&times;</div>
+                    <form class="form" name="login_form" onsubmit="return validateform()">
+                        <h2 class="font-bold text-2xl">Log In</h2>
+                        <div class="form-element">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Enter Email" class="text_in" required/>
+                        </div>
+
+                        <div class="form-element">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter Password" class="pass_in" required/>
+                        </div>
+
+                        <div class="form-element">
+                            <input type="checkbox" id="remember-me" class="check_in">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+
+                        <div class="form-element">
+                            <button type="submit">Sign In</button>
+                        </div>
+
+                        <div class="form-element">
+                            <a href="#" class="font-bold">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
+
+                    <!-- Sign Up Button -->
+                    <button id="show-signUp" class="Reg_butt text-white hidden lg:block font-bold rounded-md  px-4 border py-2 shadow-lg shadow-indigo-500/40 ">Register</button>
+                    <!-- Pop Up Sign Up Window -->
+                    
+                
+                </div>
+    
+            </nav>
+    
+    
+            <!-- Hero Section -->
+            <div class="absolute w-[1170px] left-20 mx-auto my-3 mt-5 top-20">
+    
+                <section class="hero flex flex-row  items-center ">
+    
+                    <!-- left_part -->
+                    <div class="">
+        
+                        <p class="text-black font-bold pytn">Plan your trip now.</p>
+        
+                        <h1 class="text-5xl font-bold mb-9">Save <span class="text-orange-600">big</span> with our car rental</h1>
+        
+                        <!-- <p>Rent the car of your dreams. Unbeatable price, Unlimited miles, flexible pick-up options and much more.</p> -->
+        
+                        <video src="images/CarRentalVideo.mp4" controls muted autoplay height="50px" class="mb-5 hover:cursor-pointer"></video>
+                        
+                        
+                        <div class="mx-auto flex flex-row space-x-7">
+                            <button class="Reg_butt text-white hidden lg:block font-bold rounded-md  px-4  py-2">Book Ride</button>
+                            <button class=" text-white hidden lg:block font-bold rounded-md  px-4  py-2 bg-black">Learn More</button>
+                        </div>
+                    </div>
+                    <!-- right_part -->
+                    <div class="right_part">
+                        <img src="images/hero/main-car.png" alt="">
+                    </div>
+                </section>
+            </div>
+    
+    
+            <!-- Booking Form -->
+            <form action="" class="absolute w-[1170px] left-20 mt-96 top-60 Booking bg-white rounded-md z-10">
+    
+                <div class="p-10">
+                    <h3 class="mb-5 font-bold">Book a Car</h3>
+                
+                    <div class="grid grid-rows-2 grid-flow-col gap-4">
+    
+                        <div class="space-y-2">
+                        <lebel for="carType">Select Your car Type</lebel>
+                        <br>
+                        <input type="text" name="CarType" placeholder="Enter Your Name" class="border">
+                        </div>
+                    
+    
+                        <div class="space-y-2">
+                        <lebel for="PUD">Pick-Up-Date</lebel>
+                        <br>
+                        <input type="date" name="PUD" placeholder="Enter Your Name" class="border">
+                        </div>
+    
+    
+                        <div class="space-y-2">
+                        <lebel for="DOT">Drop-of-To</lebel>
+                        <br>
+                        <input type="text" name="DOT" placeholder="Enter Your Name" class="border">
+                        </div>
+    
+                   
+    
+                        <div class="space-y-2">
+                        <lebel for="DOD">Drop-of-Date</lebel>
+                        <br>
+                        <input type="date" name="DOD" placeholder="Enter Your Name" class="border">
+                        </div>
+    
+                        <div class="space-y-2">
+                        <lebel for="PUF">Pick-Up-From</lebel>
+                        <br>
+                        <input type="text" name="PUF" placeholder="Enter Your Name" class="border">
+                        </div>
+    
+                    <button class="Reg_butt text-white hidden lg:block font-bold rounded-md  px-4 h-10 shadow-sm mt-4">Register</button>
+                    
+                </div>
+                
+            </form>
+            </div>
+        
+        
+
+        <!-- Service Section -->
+        <div class="Service_Section absolute w-[1170px] mt-[1000px] ml-[5rem]">
+
+            <p class="text-center mb-4 font-bold">Plan Your Trip Now</p>
+            
+            <h3 class="text-center font-bold text-3xl">Quick and Easy Car Rental</h3>
+
+            <div class="services flex flex-row justify-around mt-5">
+
+                <!-- Service 1 -->
+                <div class="flex flex-col items-center ">
+                    <img src="images/plan/icon1.png" alt="" height="175px" width="175px">
+                    <p class="font-bold text-2xl">Select Car</p>
+                    <p class="w-2/3 mt-3">
+                        We offer a big range of Vehicles for all 
+                        your driving needs. We have the 
+                        perfect car to meet your needs.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="flex flex-col items-center ">
+                    <img src="images/plan/icon2.png" alt="" height="175px" width="175px">
+                    <p class="font-bold text-2xl">Contact Operator</p>
+                    <p class="w-2/3 mt-3">
+                        our Knowledgeable and friendly 
+                        operators are always ready to help 
+                        with any questions or concerns.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="Service-3 flex flex-col items-center ">
+                    <img src="images/plan/icon3.png" alt="" height="175px" width="175px">
+                    <p class="font-bold text-2xl">Let's Drive</p>
+                    <p class="w-2/3 mt-3">
+                        Wheather you're hitting the open road,
+                        we've got you covered with outr wide
+                        range of cars.
+                    </p>
+                </div>
+                
+            </div>
+
+
+        </div>
+
+        
+        <!-- Select & rent -->
+        <div id="carlist" class="absolute w-[1170px] ml-[5rem] mt-[1500px]">
+                <div class="flex flex-col items-center">
+                    <p>Vehicle Models</p>
+                    <p class="font-bold text-3xl">Our Rental Fleet</p>
+                    <p>Choose from a variety of our amezing vehicle to rent for your next
+                        adventure or bussiness trip
+                    </p>
+
+                    <div class="flex flex-row w-full">
+                        <div class="Car_list flex flex-col ml-6">
+
+                            <button id="btn_1" class="car_list_butt mb-1 ">Audi A1 S-Line</button>
+                            <button id="btn_2" class="car_list_butt mb-1 ">VW Golf 6</button>
+                            <button id="btn_3" class="car_list_butt mb-1 ">Toyota Canary</button>
+                            <button id="btn_4" class="car_list_butt mb-1 ">BMW 320 MadernLine</button>
+                            <button id="btn_5" class="car_list_butt mb-1 ">Mercedes-Benz GLK</button>
+                            <button id="btn_6" class="car_list_butt mb-1 ">VW Passat CC</button>
+
+                        </div>
+
+                        <div id="imageContainer" class="ml-[180px]">
+                            <img src="images/cars-big/audia1.jpg" alt="">
+
+                        </div>
+
+                        <div class="Price_list">
+
+                        </div>
+                    </div>
+
+                </div>
+                
+        </div>
+        
+        <!-- Banner -->
+        <div class="absolute mt-[2000px] bg-gray-700 text-white w-full flex flex-col items-center p-10 ">
+            <p class="text-3xl font-bold">Save Big with Our cheap Car rental</p>
+            <p class="mt-3">Top Airports.Local Suppliers. <span id="spanele">24/7</span> support</p>
+        </div>
+
+        <!--why Choose Us -->
+        <div class="absolute mt-[2220px] w-[1170px] ml-[5rem] flex flex-col items-center flex-wrap">
+
+            <img src="images/chooseUs/main.png" alt="">
+
+            <div class="wcu flex flex-row justify-around">
+
+                <!-- Left Part -->
+                <div>
+                    <p class="font-bold">Why Choose Us</p>
+                    <p class="font-bold text-2xl w-72 mt-2">Best valued deals you will ever find</p>
+                    <p class="w-[435px] mt-3"> Discover the best deals you'll ever find our unbeatable offers.
+                        We're dedicated to providing you with the best value for your
+                        money. So you can enjoy top-quality services and produdcts without
+                        breaking the bank.Our deals are designed to give you the ultimate
+                        rating experience, so don't miss out on your chances to save big.
+                    </p>
+                    <button class="findD pl-4 pr-4 p-3 mt-4">Find details</button>
+                </div>
+
+                <!-- Right Part -->
+                <div>
+
+                    <div class="flex flex-row ">
+                        <img src="images/chooseUs/icon1.png" alt="">
+                        <div>
+                            <p class="font-bold">Cross Country Drive</p>
+                            <p class="w-[380px]">Take your driving experience to the next
+                                level with our top-notch vehicles for your
+                                cross-country adventures.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-row mt-6">
+                        <img src="images/chooseUs/icon2.png" alt="">
+                        <div>
+                            <p class="font-bold">All Inclusive Pricing</p>
+                            <p class="w-[380px]">Get everything you need in one convenient,
+                                transparant price with our all-inclusive
+                                pricing policy
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-row mt-6">
+                        <img src="images/chooseUs/icon3.png" alt="">
+                        <div>
+                            <p class="font-bold">No Hidden Charges</p>
+                            <p class="w-[380px]">Enjoy peace of mind with our no hidden
+                               charges policy. We believe in transparent
+                               and honest pricing.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Tyre Track-->
+        <img src="images/chooseUs/bg.png" 
+             alt=""
+             class="absolute top-[2450px]"
+             -z-1
+        >
+
+        <!-- Testimonials -->
+        <div id="testimonials" class="testimonials absolute mt-[3200px] w-full bg-slate-100">
+
+            <div class="w-[1170px] ml-[5rem]  flex flex-col justify-center mt-12 mb-24">
+                
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-center font-bold">Reviewed by People</p>
+                    <p class="text-center font-bold text-3xl">Client's testimonials</p>
+                    <p class="text-centre w-[570px] mt-3">
+                    Discover the positive impact we've made on our clients by reading through their
+                    testimonials. our clients have experienced our service and results, and they're eager to share 
+                    their positive experiences with you.
+                    </p>
+                </div>
+                
+                <!-- Testimony by People -->
+                <div class="w-[800px] left_test grid grid-cols-2 gap-5 mx-auto mt-12">
+                    <!-- Left-Box -->
+                    <div class="left_test p-8">
+                        <!-- Review & (image, name) -->
+                        <!-- Review -->
+                        <p>
+                            "We rented a car from this website and 
+                            had an amezing experience! The 
+                            booking was easy and the rental rates
+                            were very  affordable"
+                        </p>
+                        <!-- (image, name) -->
+                        <div class="mt-4 flex flex-row">
+                            <!-- User Image -->
+                            <img src="images/testimonials/pfp1.jpg" alt=""  height="50px" width="50px">
+                            <!-- Name Info -->
+                        <div class="ml-4">
+                            <p class="font-bold">Parry Hotter</p>
+                            <p>Belgrade</p>
+                        </div>
+    
+                        </div>
+                    </div>
+    
+                    <!-- Right Box -->
+                    <div class="right_test p-8"> 
+                        <!-- Review & (image, name) -->
+                        <!-- Review -->
+                        <p>
+                            "The car was in great condition and
+                            made  our trip even better. heighly 
+                            recommended for this rental 
+                            website"
+                        </p>
+                        <!-- (image, name) -->
+                        <div class="mt-4 flex flex-row">
+                            <!-- User Image -->
+                            <img src="images/testimonials/pfp2.jpg" alt=""  height="50px" width="50px">
+                            <!-- Name Info -->
+                        <div class="ml-4">
+                            <p class="font-bold">Ron Rizzly</p>
+                            <p>Novi Sad</p>
+                        </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FAQ Image-->
+        <img src="images/faq/car.png" alt="" 
+        class="absolute top-[4000px]"
+        >
+        <!-- FAQ details -->
+        <div class="absolute top-[3800px] w-[1170px] ml-[5rem]">
+
+            <div class="flex flex-col justify-center items-center">
+                <p class="text-center font-bold">FAQ</p>
+                <p class="text-center font-bold text-3xl">Frequently Asked Questions</p>
+                <p class="text-centre w-[620px] mt-3">
+                Frequently asked questions about car rental booking process on our website. Answer to 
+                common concerns and quiries.
+                </p>
+            </div>
+
+        </div>
+        
+        
+        <!-- App Advertisement -->
+        <div class="absolute w-full top-[4500px] bg-slate-100 ">
+            
+            <div class="w-[1170px] ml-[5rem] mt-[200px] mb-[50px]">
+                <!-- left part -->
+                <!-- 3 section flex -->
+                <div class="flex flex-col w-[550px]">
+                    <div class="font-bold text-3xl leading-[55px]">Download our App to get most out of it.</div>
+                    <div class="leading-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Itaque quia officiis perspiciatis libero cumque vitae ab 
+                        exercitationem, obcaecati sit beatae quidem, 
+                        cum similique molestias dicta laborum neque natus. 
+                        Exercitationem, repellendus.</div>
+                    <!-- 2 section flex -->
+                    <div class="grid grid-cols-2 gap-2 w-[530px] mt-5">
+                        <img src="images/download/appstore.svg" alt="">
+                        <img src="images/download/googleapp.svg" alt="">
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+
+        <!-- Right Part -->
+        <div class="absolute top-[4607px]">
+            <img src="images/banners/bg02.png" alt="">
+            
+        </div>
+
+        <!-- Footer -->
+        <div id="ContactUs" class="absolute top-[5150px] h-[200px] w-[1170px] ml-[5rem]">
+
+            <div>
+                <div class="grid grid-cols-4 ">
+                    <!-- 1st column -->
+                    <div class="w-[250px]">
+                        <p><span class="font-bold">CAR</span> Rental</p>
+                        <p class="mt-3 mb-3">We offer a big range of vehicles for 
+                           all your driving needs. We have the 
+                           perfect car to meet your needs.</p>
+                        <a href="tel:+919734586510" class="font-bold">+91 9734586510</a>
+                        <a href="mailto:mukherjeesouradip16@gmail.com" class="font-bold mt-3">mukherjeesouradip16@gmail.com</a>
+                    </div>
+    
+                    <!-- 2st column -->
+                    <div class="flex flex-col">
+                        <a href="#" class="font-bold">COMPANY</a>
+                        <a href="#" class="mt-3 mb-1">New Work</a>
+                        <a href="#" class="mb-1">Careers</a>
+                        <a href="#" class="mb-1">Mobiles</a>
+                        <a href="#" class="mb-1">Blog</a>
+                        <a href="#">How We work</a>
+                    </div>
+    
+                    <!-- 3st column -->
+                    <div class="flex flex-col">
+                        <p class="font-bold">WORKING HOURS</p>
+                        <p class="mt-3 mb-1">Mon - Fri: 9:00AM - 9:00PM</p>
+                        <p class="mb-1">Sat: 9:00AM - 7:00PM</p>
+                        <p>sun: Closed</p>
+                    </div>
+    
+                    <!-- 4st column -->
+                    <div class="flex flex-col">
+                        <p class="font-bold">SUBSCRIPTION</p>
+                        <p class="mt-3 mb-1">Subcribe Your Email address for latest news & updates.</p>
+                        <button class="mb-1 bg-gray-400 pt-2 pb-2">Enter Email Address</button>
+                        <button class="Reg_butt pt-2 pb-2">Submit</button>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </div>    
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
