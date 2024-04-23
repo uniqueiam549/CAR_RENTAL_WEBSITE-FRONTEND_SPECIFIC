@@ -1,14 +1,61 @@
+{/* <script> */}
+        function DisplayDate(){
+            document.getElementById("popup-signup").innerHTML = Date();
+        }
+
+        let x = document.getElementById("show-signUp");
+        x.addEventListener("click", function() {
+            // Create a new XMLHttpRequest object
+            let xhr = new XMLHttpRequest();
+
+            // Define the file you want to fetch
+            xhr.open('GET', 'register.html', true);
+
+            // Set up a function to execute when the request is complete
+            xhr.onload = function() {
+                if (this.status == 200) {
+                    document.getElementById("popup-signup").innerHTML = this.responseText;
+                }
+            };
+
+            // Send the request
+            xhr.send();
+        });
+    // </script>
+
+
+
+
+
+
 
 // Popup Element[login]
-document.querySelector("#show-login").addEventListener("click", function(){
-    document.querySelector(".popup").classList.add("active");
+document.querySelector("#show-logIn").addEventListener("click", function(){
+
+  document.querySelector(".popup").classList.add("active");
 });
+
+// Close Log In Popup
 document.querySelector(".popup .close-btn").addEventListener("click", function(){
-    document.querySelector(".popup").classList.remove("active");
+
+  document.querySelector(".popup").classList.remove("active");
 });
+
+
 
 
 // Popup Element[Sign Up]
+document.querySelector("#show-signUp").addEventListener("click", function(){
+
+  document.querySelector(".popup-signup").classList.add("active");
+});
+
+// Close Sign Up Popup
+document.querySelector(".popup-signup .close-btn").addEventListener("click", function(){
+
+  document.querySelector(".popup-signup").classList.remove("active");
+});
+
 
 
 

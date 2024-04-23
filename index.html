@@ -115,22 +115,22 @@
                 <div class="mx-auto flex flex-row space-x-7">
 
                     <!-- Login Button -->
-                    <button id="show-login">Log In</button>
+                    <button id="show-logIn">Log In</button>
                     <!-- Pop Up Log In Window -->
                      
-                <div class="popup">
+                    <div class="popup">
                     <!-- multiplication sign (×) -->
                     <div class="close-btn">&times;</div>
                     <form class="form" name="login_form" onsubmit="return validateform()">
                         <h2 class="font-bold text-2xl">Log In</h2>
                         <div class="form-element">
                             <label for="email">Email</label>
-                            <input type="text" id="email" name="email" placeholder="Enter Email" class="text_in" required/>
+                            <input type="text" id="email1" name="email" placeholder="Enter Email" class="text_in" required/>
                         </div>
 
                         <div class="form-element">
                             <label for="password">Password</label>
-                            <input type="password" id="password" placeholder="Enter Password" class="pass_in" required/>
+                            <input type="password" id="password1" placeholder="Enter Password" class="pass_in" required/>
                         </div>
 
                         <div class="form-element">
@@ -146,11 +146,42 @@
                             <a href="#" class="font-bold">Forgot Password?</a>
                         </div>
                     </form>
-                </div>
+                    </div>
 
                     <!-- Sign Up Button -->
                     <button id="show-signUp" class="Reg_butt text-white hidden lg:block font-bold rounded-md  px-4 border py-2 shadow-lg shadow-indigo-500/40 ">Register</button>
+                    
                     <!-- Pop Up Sign Up Window -->
+                    <div class="popup-signup">
+                    <!-- multiplication sign (×) -->
+                    <!-- <div class="close-btn">&times;</div>
+                    <form class="form" name="signup_form" onsubmit="return validateSignupForm()">
+                        <h2 class="font-bold text-2xl">Register</h2>
+                        <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="text" id="email2" name="email" placeholder="Enter Email" class="text_in" required/>
+                    </div>
+
+        <div class="form-element">
+            <label for="password">Password</label>
+            <input type="password" id="password2" placeholder="Enter Password" class="pass_in" required/>
+        </div>
+
+        <div class="form-element">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" class="pass_in" required/>
+        </div>
+
+        <div class="form-element">
+            <button type="submit">Sign Up</button>
+        </div>
+
+        <div class="form-element">
+            <a href="#" class="font-bold">Already have an account? Log In</a>
+        </div>
+    </form> -->
+                    </div>
+
                     
                 
                 </div>
@@ -250,7 +281,7 @@
 
                 <!-- Service 1 -->
                 <div class="flex flex-col items-center ">
-                    <img src="images/plan/icon1.png" alt="" height="175px" width="175px">
+                    <img src="images/plan/picon1.png" alt="" height="175px" width="175px">
                     <p class="font-bold text-2xl">Select Car</p>
                     <p class="w-2/3 mt-3">
                         We offer a big range of Vehicles for all 
@@ -261,7 +292,7 @@
 
                 <!-- Service 2 -->
                 <div class="flex flex-col items-center ">
-                    <img src="images/plan/icon2.png" alt="" height="175px" width="175px">
+                    <img src="images/plan/picon2.png" alt="" height="175px" width="175px">
                     <p class="font-bold text-2xl">Contact Operator</p>
                     <p class="w-2/3 mt-3">
                         our Knowledgeable and friendly 
@@ -272,7 +303,7 @@
 
                 <!-- Service 3 -->
                 <div class="Service-3 flex flex-col items-center ">
-                    <img src="images/plan/icon3.png" alt="" height="175px" width="175px">
+                    <img src="images/plan/picon3.png" alt="" height="175px" width="175px">
                     <p class="font-bold text-2xl">Let's Drive</p>
                     <p class="w-2/3 mt-3">
                         Wheather you're hitting the open road,
