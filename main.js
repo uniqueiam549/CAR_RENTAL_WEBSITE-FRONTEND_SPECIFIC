@@ -1,27 +1,97 @@
-{/* <script> */}
-        function DisplayDate(){
-            document.getElementById("popup-signup").innerHTML = Date();
+// Log In functionality
+
+document.addEventListener("DOMContentLoaded", function() {
+    let x = document.getElementById("show-logIn");
+    let popupLoaded = false; // Flag to track if popup content is loaded
+
+    function loadLoginForm() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'login.html', true);
+
+        xhr.onload = function() {
+            if (this.status == 200) {
+                document.querySelector(".popup").innerHTML = this.responseText;
+                popupLoaded = true; // Set flag to true after loading content
+                attachCloseButtonListener(); // Attach close button listener
+            }
+        };
+
+        xhr.send();
+    }
+
+    function attachCloseButtonListener() {
+        let closeButton = document.querySelector(".popup .close-btn");
+        if (closeButton) {
+            closeButton.addEventListener("click", closePopup); // Attach close button listener
         }
+    }
 
-        let x = document.getElementById("show-signUp");
-        x.addEventListener("click", function() {
-            // Create a new XMLHttpRequest object
-            let xhr = new XMLHttpRequest();
+    function closePopup() {
+        document.querySelector(".popup").classList.remove("active");
+    }
 
-            // Define the file you want to fetch
-            xhr.open('GET', 'register.html', true);
+    x.addEventListener("click", function() {
+        if (!popupLoaded) { // Load content only if it's not already loaded
+            loadLoginForm();
+        }
+        document.querySelector(".popup").classList.add("active");
+    });
+});
 
-            // Set up a function to execute when the request is complete
-            xhr.onload = function() {
-                if (this.status == 200) {
-                    document.getElementById("popup-signup").innerHTML = this.responseText;
-                }
-            };
 
-            // Send the request
-            xhr.send();
-        });
-    // </script>
+
+
+// Register Button Functionality
+
+        document.addEventListener("DOMContentLoaded", function() {
+          let x = document.getElementById("show-signUp");
+          let popupLoaded = false; // Flag to track if popup content is loaded
+      
+          function loadRegisterForm() {
+              let xhr = new XMLHttpRequest();
+              xhr.open('GET', 'register.html', true);
+      
+              xhr.onload = function() {
+                  if (this.status == 200) {
+                      document.querySelector(".popup-signup").innerHTML = this.responseText;
+                      popupLoaded = true; // Set flag to true after loading content
+                      attachCloseButtonListener(); // Attach close button listener
+                  }
+              };
+      
+              xhr.send();
+          }
+      
+          function attachCloseButtonListener() {
+              let closeButton = document.querySelector(".popup-signup .close-btn");
+              if (closeButton) {
+                  closeButton.addEventListener("click", closePopup); // Attach close button listener
+              }
+          }
+      
+          function closePopup() {
+              document.querySelector(".popup-signup").classList.remove("active");
+          }
+      
+          x.addEventListener("click", function() {
+              if (!popupLoaded) { // Load content only if it's not already loaded
+                  loadRegisterForm();
+              }
+              document.querySelector(".popup-signup").classList.add("active");
+          });
+      });
+      
+      
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -30,31 +100,32 @@
 
 
 // Popup Element[login]
-document.querySelector("#show-logIn").addEventListener("click", function(){
+//document.querySelector("#show-logIn").addEventListener("click", function(){
 
-  document.querySelector(".popup").classList.add("active");
-});
+//  document.querySelector(".popup").classList.add("active");
+//});
 
 // Close Log In Popup
-document.querySelector(".popup .close-btn").addEventListener("click", function(){
+//document.querySelector(".popup .close-btn").addEventListener("click", function(){
 
-  document.querySelector(".popup").classList.remove("active");
-});
+ // document.querySelector(".popup").classList.remove("active");
+ // document.querySelector(".popup-signup").innerHTML = "";
+//});
 
 
 
 
 // Popup Element[Sign Up]
-document.querySelector("#show-signUp").addEventListener("click", function(){
+//document.querySelector("#show-signUp").addEventListener("click", function(){
 
-  document.querySelector(".popup-signup").classList.add("active");
-});
+//  document.querySelector(".popup-signup").classList.add("active");
+//});
 
 // Close Sign Up Popup
-document.querySelector(".popup-signup .close-btn").addEventListener("click", function(){
+//document.querySelector(".popup-signup .close-btn").addEventListener("click", function(){
 
-  document.querySelector(".popup-signup").classList.remove("active");
-});
+//  document.querySelector(".popup-signup").classList.remove("active");
+//});
 
 
 

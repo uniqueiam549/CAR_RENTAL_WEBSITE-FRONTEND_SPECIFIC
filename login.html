@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="reg_style.css">
+    <link rel="stylesheet" href="log_style.css">
 </head>
 <body>
-    <div class="close-btn">&times;</div>
+                    <div class="close-btn">&times;</div>
                     <form class="form" name="signup_form" onsubmit="return validateSignupForm()">
-                        <h2 class="font-bold text-2xl">Register</h2>
+                        <h2 class="font-bold text-2xl">Log In</h2>
 
                         <div class="form-element">
                             <label for="email">Email</label>
@@ -21,17 +21,13 @@
                             <input type="password" id="password2" placeholder="Enter Password" class="pass_in" required/>
                         </div>
 
+
                         <div class="form-element">
-                            <label for="confirm-password">Confirm Password</label>
-                            <input type="password" id="confirm-password" placeholder="Confirm Password" class="pass_in" required/>
+                            <button type="submit">Log In</button>
                         </div>
 
                         <div class="form-element">
-                            <button type="submit">Sign Up</button>
-                        </div>
-
-                        <div class="form-element">
-                            <a href="#" class="font-bold">Already have an account? Log In</a>
+                            <a href="#" class="font-bold">Don't have an account? Sign Up</a>
                         </div>
                     </form>
 </body>
